@@ -2,14 +2,21 @@
 {
     public class Program
     {
+        //statische Variablen
         public static string fileName = @"c:\tmp\Dateien.txt";
         public static FileStream file = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
         public static StreamWriter writer = new StreamWriter(file);
         public static  string path = @"P:\dokumente\BAUER";
+
+        //Hauptprogramm
         static void Main(string[] args)
         {
             FileListing(path);
         }
+
+        //Methode die in Verzeichnissen nach Dateien sucht und diese listet.
+        //Beim Vorhandensein von weiteren Verzeichnissen ruft sich die Methode 
+        //erneut selbst auf.
         public static void FileListing(string path)
         {
             
